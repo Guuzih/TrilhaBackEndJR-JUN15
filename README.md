@@ -1,5 +1,70 @@
 ![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)
 
+# Task Manager API
+
+## Descrição
+
+API RESTful para gerenciamento de tarefas com funcionalidades de CRUD, autenticação de usuários e armazenamento de dados em SQLite.
+
+## Endpoints
+
+### Usuários
+
+- **POST /api/users/register**
+  - Registra um novo usuário.
+  - Body: { "username": "string", "password": "string" }
+  - Validações:
+    - `username` é obrigatório.
+    - `password` deve ter no mínimo 6 caracteres.
+
+- **POST /api/users/login**
+  - Autentica um usuário e gera um token JWT.
+  - Body: { "username": "string", "password": "string" }
+  - Validações:
+    - `username` é obrigatório.
+    - `password` é obrigatório.
+
+### Tarefas
+
+- **POST /api/tasks**
+  - Cria uma nova tarefa.
+  - Body: { "title": "string", "description": "string" }
+  - Validações:
+    - `title` é obrigatório.
+  - Requer autenticação.
+
+- **GET /api/tasks**
+  - Lista todas as tarefas.
+  - Requer autenticação.
+
+- **PUT /api/tasks/:id**
+  - Atualiza uma tarefa existente.
+  - Body: { "title": "string", "description": "string", "completed": "boolean" }
+  - Validações:
+    - `title` é obrigatório.
+  - Requer autenticação.
+
+- **DELETE /api/tasks/:id**
+  - Deleta uma tarefa existente.
+  - Requer autenticação.
+
+- **POST /api/tasks/send-email**
+  - Envia os detalhes de uma tarefa por email.
+  - Body: { "email": "string", "taskId": "number" }
+  - Validações:
+    - `email` deve ser válido.
+    - `taskId` deve ser um número válido.
+  - Requer autenticação.
+
+## Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone git@github.com:Guuzih/TrilhaBackEndJR-JUN15.git
+   npm install
+
+-----------------
+
 # 📚 Trilha Inicial BackEnd Jr
 Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de tarefas, proporcionando funcionalidades de CRUD (Create, Read, Update, Delete) de tarefas, autenticação de usuários e armazenamento dos dados em um banco de dados.
 
