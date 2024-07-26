@@ -4,6 +4,34 @@ const { register, login } = require('../controllers/userController');
 
 const router = Router();
 
+/**
+ * @swagger
+ * /users/register:
+ *   post:
+ *     summary: Registra um novo usuário
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - password
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 description: O nome de usuário
+ *               password:
+ *                 type: string
+ *                 description: A senha do usuário
+ *     responses:
+ *       200:
+ *         description: Usuário registrado com sucesso
+ *       400:
+ *         description: Erro de validação
+ */
 router.post(
     '/register',
     [
@@ -20,6 +48,34 @@ router.post(
     register
 );
 
+/**
+ * @swagger
+ * /users/login:
+ *   post:
+ *     summary: Faz o login de um usuário
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - password
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 description: O nome de usuário
+ *               password:
+ *                 type: string
+ *                 description: A senha do usuário
+ *     responses:
+ *       200:
+ *         description: Login realizado com sucesso
+ *       400:
+ *         description: Erro de validação
+ */
 router.post(
     '/login',
     [
