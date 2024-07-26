@@ -5,9 +5,9 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'Task Management API',
+            title: 'TrilhaBackEndJR',
             version: '1.0.0',
-            description: 'API for managing tasks'
+            description: 'Colocar o /api/ antes'
         }
     },
     apis: ['./src/routes/*.js']
