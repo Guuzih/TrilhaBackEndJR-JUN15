@@ -16,12 +16,16 @@ const router = Router();
  *         application/json:
  *           schema:
  *             type: object
- *             required:
+ *            required:
  *               - title
+ *               - description
  *             properties:
  *               title:
  *                 type: string
  *                 description: O título da tarefa
+ *               description:
+ *                 type: string
+ *                 description: A descrição da tarefa
  *     responses:
  *       200:
  *         description: Tarefa criada com sucesso
